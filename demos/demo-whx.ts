@@ -1,5 +1,6 @@
 import dotenv from 'dotenv-safe'
 import { oraPromise } from 'ora'
+import 'unfetch/polyfill'
 
 import { ChatGPTUnofficialProxyAPI } from '../src'
 
