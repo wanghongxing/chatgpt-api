@@ -1,6 +1,5 @@
 import dotenv from 'dotenv-safe'
 import { oraPromise } from 'ora'
-import 'unfetch/polyfill'
 
 import { ChatGPTUnofficialProxyAPI } from '../src'
 
@@ -35,6 +34,7 @@ async function main() {
   let res = await oraPromise(api.sendMessage(prompt), {
     text: prompt
   })
+  console.log('\n' + res.text + '\n')
 
   const prompt2 = `请把下面的原文帮我标注出结果：
   销售真的不行，大家要注意了！各种套路，说的话出尔反尔！毫无信誉可言
@@ -51,6 +51,8 @@ async function main() {
       text: prompt2
     }
   )
+  console.log('\n' + res + '\n')
+
   console.log('\n' + res.text + '\n')
 
   const prompt3 = `请把下面的原文帮我标注出结果：
@@ -68,6 +70,8 @@ async function main() {
       text: prompt3
     }
   )
+  console.log('\n' + res + '\n')
+
   console.log('\n' + res.text + '\n')
 
   const prompt4 = `请分析如下评价的情感，回答正向、负向就行。评价如下：
